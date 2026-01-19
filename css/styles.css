@@ -194,6 +194,7 @@ a {
 .hero {
   background: var(--brand-light);
   padding: 80px 20px;
+  overflow: hidden;
 }
 
 .hero-inner {
@@ -220,7 +221,8 @@ a {
 
 .hero-visual img {
   max-width: 100%;
-  width: 420px;
+  height: auto;
+  display: block;
 }
 
 /* =====================================================
@@ -526,5 +528,15 @@ a {
 
   .hero-content h1 {
     font-size: 32px;
+  }
+
+  .hero-visual {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .hero-visual img {
+    width: 100%;
+    height: auto;
   }
 }
