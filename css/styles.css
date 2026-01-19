@@ -219,7 +219,8 @@ a {
 }
 
 .hero-visual img {
-  max-width: 420px;
+  max-width: 100%;
+  width: 420px;
 }
 
 /* =====================================================
@@ -460,6 +461,13 @@ a {
 
   .hero-visual {
     margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-visual img {
+    width: 100%;
+    max-width: 350px;
   }
 }
 
