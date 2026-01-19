@@ -64,6 +64,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .brand {
@@ -92,11 +93,43 @@ a {
   color: white;
   font-size: 15px;
   font-weight: 500;
+  transition: opacity 0.3s ease;
 }
 
 .nav-links a.active,
 .nav-links a:hover {
   opacity: 0.85;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* =====================================================
@@ -435,10 +468,41 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .nav-links {
-    gap: 18px;
+  /* Responsive Navbar */
+  .hamburger {
+    display: flex;
   }
-}
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--brand-dark);
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+  }
+
+  .nav-links a {
+    padding: 15px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}}
+
 @media (max-width: 480px) {
   .page-header h1 {
     font-size: 28px;
@@ -446,5 +510,13 @@ a {
 
   .how-section h2 {
     font-size: 26px;
+  }
+
+  .brand span {
+    font-size: 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
   }
 }
