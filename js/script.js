@@ -6,6 +6,16 @@ if (hamburger && navLinks) {
   hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
+    
+    // Toggle between bars and times icon
+    const icon = hamburger.querySelector('i');
+    if (hamburger.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
   });
 
   // Close menu when a link is clicked
@@ -14,6 +24,11 @@ if (hamburger && navLinks) {
     link.addEventListener('click', function() {
       hamburger.classList.remove('active');
       navLinks.classList.remove('active');
+      
+      // Reset icon to bars
+      const icon = hamburger.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
     });
   });
 
@@ -25,6 +40,11 @@ if (hamburger && navLinks) {
     if (!isClickInsideNav && !isClickOnHamburger) {
       hamburger.classList.remove('active');
       navLinks.classList.remove('active');
+      
+      // Reset icon to bars
+      const icon = hamburger.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
     }
   });
 }

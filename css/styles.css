@@ -122,12 +122,17 @@ a {
 /* Hamburger Menu */
 .hamburger {
   display: none;
-  flex-direction: column;
   background: none;
   border: none;
   cursor: pointer;
-  gap: clamp(4px, 1vw, 6px);
   padding: clamp(2px, 1vw, 5px);
+  color: white;
+  font-size: clamp(20px, 5vw, 24px);
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .hamburger span {
@@ -139,7 +144,7 @@ a {
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: translate(5px,7.5px) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -147,7 +152,7 @@ a {
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: translate(5px, -7.5px) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /* =====================================================
