@@ -139,7 +139,7 @@ a {
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(10px, 10px);
+  transform: translate(5px,7.5px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -147,7 +147,7 @@ a {
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: translate(5px, -7.5px) rotate(-45deg);
 }
 
 /* =====================================================
